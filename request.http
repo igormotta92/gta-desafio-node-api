@@ -1,0 +1,54 @@
+
+# Time
+GET http://localhost:3000/times
+###
+GET http://localhost:3000/times/1
+###
+PUT http://localhost:3000/times/1
+content-type: application/json
+
+{
+    "name": "Super Mario 222",
+    "description": "Super Nintendo"
+}
+###
+DELETE http://localhost:3000/times/2
+###
+POST http://localhost:3000/times
+content-type: application/json
+
+{
+    "name": "Super Mario World",
+    "description": "Super Nintendo"
+}
+
+###
+
+GET http://localhost:3000/times/1/players
+###
+GET http://localhost:3000/times/1/players/1
+###
+PUT http://localhost:3000/times/1/players/1
+content-type: application/json
+
+{
+    "name": "Zé",
+    "latname": "Claudio",
+    "nick": "storn",
+    "role": "Player",
+    "id_time": 1
+}
+
+###
+DELETE http://localhost:3000/times/1/players/2
+###
+POST http://localhost:3000/times/1/players
+content-type: application/json
+
+{
+    "name": "Super Mario World",
+    "latname": "Super Nintendo",
+    "nick": "Juca",
+    "role": "Player",
+    "id_time": 1
+}
