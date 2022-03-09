@@ -1,11 +1,10 @@
 {
-  "name": "gta-desafio-node-api (e-sport)",
+  "name": "gta-desafio-node-api",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js",
-    "dev2": "nodemon index2.js"
+    "dev": "nodemon index.js"
   },
   "keywords": [],
   "author": "",

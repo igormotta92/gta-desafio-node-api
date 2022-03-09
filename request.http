@@ -1,10 +1,24 @@
 
-# Time
-GET http://localhost:3000/times
+@baseUrl = http://localhost:3000
+
+############
+### Time ###
+############
+
+# @name timesNew
+POST {{baseUrl}}/times HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Super Mario World",
+    "description": "Super Nintendo Top"
+}
 ###
-GET http://localhost:3000/times/1
+GET {{baseUrl}}/times HTTP/1.1
 ###
-PUT http://localhost:3000/times/1
+GET {{baseUrl}}/times/1 HTTP/1.1
+###
+PUT {{baseUrl}}/times/1 HTTP/1.1
 content-type: application/json
 
 {
@@ -12,23 +26,30 @@ content-type: application/json
     "description": "Super Nintendo"
 }
 ###
-DELETE http://localhost:3000/times/2
+DELETE {{baseUrl}}/times/2 HTTP/1.1
 ###
-POST http://localhost:3000/times
+
+###############
+### Players ###
+###############
+
+# @name playersNew
+POST {{baseUrl}}/times/1/players HTTP/1.1
 content-type: application/json
 
 {
     "name": "Super Mario World",
-    "description": "Super Nintendo"
+    "latname": "Super Nintendo",
+    "nick": "Juca",
+    "role": "Player",
+    "id_time": 1
 }
 
+GET {{baseUrl}}/times/1/players HTTP/1.1
 ###
-
-GET http://localhost:3000/times/1/players
+GET {{baseUrl}}/times/1/players/1 HTTP/1.1
 ###
-GET http://localhost:3000/times/1/players/1
-###
-PUT http://localhost:3000/times/1/players/1
+PUT {{baseUrl}}/times/1/players/1 HTTP/1.1
 content-type: application/json
 
 {
@@ -40,15 +61,5 @@ content-type: application/json
 }
 
 ###
-DELETE http://localhost:3000/times/1/players/2
+DELETE {{baseUrl}}/times/1/players/2 HTTP/1.1
 ###
-POST http://localhost:3000/times/1/players
-content-type: application/json
-
-{
-    "name": "Super Mario World",
-    "latname": "Super Nintendo",
-    "nick": "Juca",
-    "role": "Player",
-    "id_time": 1
-}

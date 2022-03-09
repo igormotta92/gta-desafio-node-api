@@ -21,7 +21,11 @@ app.route('/times').post((req, res) => {
     ...body
   })
 
-  res.status(201).setHeader('Location', `http://localhost:3000/times/${nextId}`).send()
+  res.status(201);
+  res.header('Location', `http://localhost:3000/times/${nextId}`);
+  res.send();
+
+  //res.status(201).setHeader('Location', `http://localhost:3000/times/${nextId}`).send()
 }).get((_, res) => {
   res.json(times)
 
